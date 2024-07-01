@@ -1,0 +1,131 @@
+{% extends 'navigation.html' %}
+{% block body%}
+{% load static %}
+
+<style>
+    .img{
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+<div class="container" style="margin-top: 95px;">
+    <img src="{% static 'images/about.jpg' %}" alt="" class="img" >
+    <p>
+        <h2>Welcome to CAREBOND: Empowering Lives with Innovation</h2>
+
+        At CAREBOND, we believe in harnessing the power of technology to enhance the lives of Alzheimer's patients and
+        their caregivers. Our mission is to provide cutting-edge solutions that not only improve the quality of care but
+        also uplift the overall living standards of those affected by Alzheimer's disease.
+
+        <h2>Our Vision</h2>
+
+        We envision a world where every individual living with Alzheimer's disease can lead a dignified and fulfilling
+        life, supported by innovative and compassionate care solutions.
+
+        <h2>Our Commitment</h2>
+
+        At CAREBOND, we are committed to revolutionizing Alzheimer's care through:
+        <ol>
+        <li><b>Face Recognition and Detection: </b>Our advanced facial recognition technology ensures the safety and security of
+        Alzheimer's patients. By accurately identifying individuals, we provide caregivers with peace of mind, knowing
+        their loved ones are safe.</li>
+
+        <li><b>Live Location Tracking: </b> With real-time location tracking, caregivers can easily locate Alzheimer's patients who
+        may wander or get lost. Our intuitive interface allows caregivers to monitor their loved ones' movements with
+        ease and precision.
+
+        <li><b>Medicine Reminder: </b> Our intuitive medicine reminder feature ensures that Alzheimer's patients never miss a dose.
+        With customizable alerts and reminders, caregivers can effortlessly manage medication schedules, leading to
+        better health outcomes for their loved ones.
+        </ol>
+        <h2>Why Choose CAREBOND?</h2>
+        <ul>
+        <li><b>Innovation:</b></li> We continuously innovate and integrate the latest advancements in technology to provide
+        state-of-the-art solutions for Alzheimer's care.
+
+        <li><b>Empathy:</b></li> We understand the challenges faced by Alzheimer's patients and their caregivers, and we strive to
+        develop solutions that prioritize empathy, dignity, and respect.
+
+        <li><b>User-Friendly Interface:</b></li> Our user-friendly interface is designed with the needs of caregivers and patients in
+        mind. With intuitive navigation and seamless functionality, our platform makes caregiving easier and more
+        efficient.
+        </ul>
+        <h3>Join Us in Making a Difference</h3>
+
+        Join us at CAREBOND as we work together to make a positive impact in the lives of Alzheimer's patients and their
+        caregivers. Together, we can create a future where everyone affected by Alzheimer's disease receives the care,
+        support, and dignity they deserve. <br><br>
+    <section id="services">
+        <center>
+            <h1>Website<span style="color: orangered;"> Developers</span></h1>
+        </center>
+        <div class="d-flex flex-row justify-content-center p-3 w-100 m-2 flex-wrap ">
+
+            <div class="carditem d-flex flex-column p-4 justify-content-center align-items-center m-4 shadow  "
+                style="width:300px">
+                <img src="{% static 'images/profile.png'%}" width="150" height="150" alt="">
+                <h4 class="my-2">Dr. p. Kanchanamala</h4>
+                <p class="my-2" style="text-align: center;">
+                    Faculty Coordinator
+                </p>
+
+            </div>
+            <div class="carditem d-flex flex-column p-4 justify-content-center align-items-center m-4 shadow "
+                style="width:300px">
+                <img src="{% static 'images/ramprasad.jpg'%}" width="150" height="150" alt="">
+                <h4 class="my-2">RamPrasad Chippada</h4>
+                <p class="my-2" style="text-align: center;">
+                    Team Lead
+                </p>
+                <a href="https://ramprasad2003.github.io/portfolio/" class="btn btn-danger">Click Here To Visit Profile</a><br><br>
+            </div>
+            <div class="carditem d-flex flex-column p-4 justify-content-center align-items-center m-4 shadow"
+                style="width:300px">
+                <img src="{% static 'images/profile.png'%}" width="150" height="150" alt="">
+                <h4 class="my-2">G.MOHAN MANIDEEP</h4>
+                <p class="my-2" style="text-align: center;">
+                    Team Member
+                </p>
+
+            </div>
+            <div class="carditem d-flex flex-column p-4 justify-content-center align-items-center m-4 shadow"
+                style="width:300px">
+                <img src="{% static 'images/profile.png'%}" width="150" height="150" alt="">
+                <h4 class="my-2">Tejasri Bennabatthula </h4>
+                <p class="my-2" style="text-align: center;">
+                    Team Member
+                </p>
+
+            </div>
+            <div class="carditem d-flex flex-column p-4 justify-content-center align-items-center m-4 shadow"
+                style="width:300px">
+                <img src="{% static 'images/profile.png'%}" width="150" height="150" alt="">
+                <h4 class="my-2">Shavukaru Mohith </h4>
+                <p class="my-2" style="text-align: center;">
+                    Team Member
+                </p>
+
+            </div>
+            <div class="carditem d-flex flex-column p-4 justify-content-center align-items-center m-4 shadow"
+                style="width:300px">
+                <img src="{% static 'images/profile.png'%}" width="150" height="150" alt="">
+                <h4 class="my-2">Banki Praveen </h4>
+                <p class="my-2" style="text-align: center;">
+                    Team Member
+                </p>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="container mt-5 text-center">
+        <p style="font-size: 20pt; color:darkblue;font-weight:bold;text-align:center">COPYRIGHT &copy;
+            <script>document.write(new Date().getFullYear());</script> All Rights Reserverd to <span
+                style="color: brown;text-shadow:1px 1px black">Mini Project A1 Batch</span>
+        </p>
+    </footer>
+</div>
+{%endblock%}

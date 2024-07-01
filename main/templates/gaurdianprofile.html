@@ -1,0 +1,112 @@
+{% extends 'carenav.html' %}
+{% load static%}
+{% block body%}
+<style>
+    .box-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        margin: 2rem;
+    }
+
+    .box-tilt {
+        box-shadow: 1px 1px solid black;
+        border: 1px solid black;
+        width: 500px;
+        height: 350px;
+        padding: 15px;
+        box-shadow: 10px 10px 10px black;
+        border-radius: 12px;
+        text-align: center;
+    }
+
+    .box-tilt2 {
+        box-shadow: 1px 1px solid black;
+        width: auto;
+        height: Auto;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .box-tilt3 {
+        box-shadow: 1px 1px solid black;
+        width: 700px;
+        padding: 15px;
+
+    }
+    .pro {
+        margin-top: 20px;
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+    }
+
+    .content {
+        text-align: left;
+    }
+    a{
+        margin-left: 30px;
+    }
+    @media (max-width: 1187px){
+        .box-container{
+            flex-wrap: wrap-reverse;
+        }
+    }
+</style>
+<link rel="stylesheet" href="{static 'mystyle.css'}">
+
+<div class="container" style="margin-top:90px;">
+    <h2 class="text-center" style="text-transform: capitalize;"> {{d.user.last_name}} {{d.user.first_name}}</h2>
+    <div class="box-container">
+        <div class="box-tilt">
+            <div class="content">
+                <h4 align="center">Profile</h4>
+                <div class="row">
+                    <div class="col-md-4">
+                        <b>FULL NAME : </b>
+                    </div>
+                    <div class="col-md-6">
+                        {{d.user.last_name}} {{d.user.first_name}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <b>CONTACT NO : </b>
+                    </div>
+                    <div class="col-md-4">
+                        {{d.contact}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <b>GENDER : </b>
+                    </div>
+                    <div class="col-md-4">
+                        {{d.gender}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <b>DATE OF BIRTH : </b>
+                    </div>
+                    <div class="col-md-4">
+                        {{d.dob}}
+                    </div>
+                </div> <br>
+                <a href="{% url 'editprofile' %}" class="btn btn-danger">EDIT PROFILE</a>
+            </div>
+        </div>
+        <div class="box-tilt2">
+            <center><img draggable="false" src="{{d.facial_image.url}}" alt="" class="pro" /></center>
+        </div>
+    </div>
+
+    {% if error %}
+    <script>
+        alert('profile updated')
+        window.location = "{% url 'gaurdianprofile' %}"
+    </script>
+    {%endif %}
+
+    {%endblock%}

@@ -1,0 +1,62 @@
+{% extends 'patientnav.html' %}
+{% load static%}
+{% block body%}
+<style>
+    .box-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        margin: 2rem;
+    }
+
+    .box-tilt {
+        box-shadow: 1px 1px solid black;
+        border: 1px solid black;
+        width: 300px;
+        padding: 15px;
+        box-shadow: 10px 10px 10px black;
+        border-radius: 12px;
+        text-align: center;
+    }
+
+    .pro {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+    }
+
+    .content {
+        text-align: left;
+    }
+</style>
+
+<div class="container" style="margin-top:90px;">
+    <h2 class="text-center">Person Profiles</h2><hr><br>
+    <a href="{% url 'scan' %}" class="btn btn-success">SCAN FACES</a>
+    <div class="box-container">
+        {% for d in users %}
+        <div class="box-tilt">
+            <img draggable="false" src="{{d.facial_image.url}}" alt="" class="pro" />
+            <div class="content">
+                <h4 align="center">{{d.name}}</h4>
+                <h6>{{d.gender}}</h6>
+                <h6>{{d.dob}}</h6>
+                <h6>Relation : {{d.relation}}</h6>
+                <h6>Description :</h6><p>{{d.description}}</p>
+                <!-- <a href="mailto:{{d.user.username}}"><i class="material-icons" style="font-size:36px">email</i></a>
+                <a href="tel:+{{d.contact}}"><i class="material-icons" style="font-size:36px">local_phone</i></a><br> <br> -->
+                <center>
+                    <a href="#" class="btn btn-danger">Delete</a>
+                </center>
+            </div>
+        </div>
+        {%endfor%}
+
+        {% if error %}
+        <script>
+            alert('profile updated')
+            window.location = "{% url 'profile' %}"
+        </script>
+        {%endif %}
+
+        {%endblock%}

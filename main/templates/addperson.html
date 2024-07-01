@@ -1,0 +1,51 @@
+{% extends 'carenav.html'%}
+{% block body%}
+{% load static %}
+
+{% if error == 'no' %}
+    <script>
+        success("signup successfully ✔️ ");
+        setTimeout(function(){
+            window.location = '{% url "viewpersons" pid %}';
+        }, 3000);
+    </script>
+{% endif %}
+
+{% if error == 'yes' %}
+    <script>
+        failure("Failed ❌ 😞");
+    </script>
+{% endif %}
+
+<div class="container"style="margin-top: 90px;">
+    <div class="row">
+        <div class="col-sm-6" style="margin-top: 10px;">
+            <h2 class="text-center">PERSON SIGNUP</h2>
+            <hr>
+            <p>Fill all the feilds and click Register button</p>
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token%}
+                <label for="">Name</label>
+                <input type="text" class="form-control" placeholder="Enter Name" name="name" required>
+                <label for="">Date Of Birth</label>
+                <input type="date"  name="dob" class="form-control" required>
+                <label for="">Gender</label>
+                <select name="gender" id="" class="form-control" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Others">Others</option>
+                </select>
+                <label for="">Relation With Patient</label>
+                <input type="text" class="form-control" placeholder="Ex: Brother, Friend" name="relation" required>
+                <label for="">Description About the person</label>
+                <textarea name="describe" id="" class="form-control" cols="30" rows="4" placeholder="Small description About the Relation with the Patient" required></textarea>
+                <label for="">Upload Image</label>
+                <input type="file"  name="pro" class="form-control" accept="image/*" required > <br>
+                <input type="submit" class="btn btn-danger mt-2" value="REGISTER">
+            </form>
+        </div>
+        
+    </div>
+</div>
+
+{%endblock%}

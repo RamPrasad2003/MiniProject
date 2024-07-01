@@ -1,0 +1,158 @@
+{% extends 'carenav.html' %}
+{% block body%}
+{% load static %}
+<style>
+    /* Importing Google font - Open Sans */
+    @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
+
+    .hero-section {
+        background-color: white;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        height: 95vh;
+        margin: 0 auto;
+        background-image: url('{% static "images/hope.jpg"%}');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .hero-section .hero {
+        background-color: rgba(255, 255, 255, 0.5);
+        font-weight: 400;
+        width: 100%;
+        height: 100%;
+        padding: 100px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+    }
+
+    .opt {
+        filter: blur(100%);
+    }
+
+    .hero h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        color: black;
+        text-align: left;
+    }
+
+    .hero-section .img img {
+        filter: opacity(100%);
+    }
+
+    .hero-section .buttons {
+        margin-top: 40px;
+    }
+
+    .hero-section .buttons a {
+        text-decoration: none;
+        color: #fff;
+        padding: 12px 24px;
+        border-radius: 0.375rem;
+        font-weight: 600;
+        transition: 0.2s ease;
+        display: inline-block;
+    }
+
+    .hero-section .buttons a:not(:last-child) {
+        margin-right: 15px;
+    }
+
+    .buttons .join {
+        background-color: #47b2e4;
+    }
+
+    .hero-section .buttons .learn {
+        border: 1px solid #fff;
+        border-radius: 0.375rem;
+    }
+
+    .hero-section .buttons a:hover {
+        scale: 1.2;
+    }
+
+    .carditem:hover {
+        scale: 1.1;
+    }
+
+    @media screen and (max-width: 1023px) {
+        .navbar .logo a {
+            font-size: 1.5rem;
+        }
+
+        .links {
+            position: fixed;
+            left: -100%;
+            top: 75px;
+            width: 100%;
+            height: 100vh;
+            padding-top: 50px;
+            background: #175d69;
+            flex-direction: column;
+            transition: 0.3s ease;
+        }
+
+        .navbar #menu-toggle:checked~.links {
+            left: 0;
+        }
+
+        .navbar #hamburger-btn {
+            display: block;
+        }
+
+        .header .buttons {
+            display: none;
+        }
+
+        .hero-section .hero {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero-section {
+            background-color: rgba(27, 144, 206, 0.5);
+        }
+    }
+</style>
+<section class="hero-section">
+    <div class="opt">
+        <div class="hero">
+            <h2>CAREBOND FOR <span style="color: orangered;">ALZHEIMER'S</span></h2>
+            <p>
+                Welcome to haven, where champions of patience, beacons of empathy, and unwavering pillars of support
+                illuminate the path with love and dedication. Register with us and let us guide your journey with care
+                and compassion.
+            </p>
+            <div class="buttons">
+                <a href="{% url 'createpatient' %}" class="btn btn-primary"
+                    style="background-color: orangered;">Register Patient</a>
+                <a href="#services" class="btn btn-dark">About Us</a>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="d-flex flex-row justify-content-center p-3 w-100 m-2 flex-wrap ">
+
+        <div class="carditem d-flex flex-column p-4 justify-content-center align-items-center m-4 shadow  "
+            style="width:350px">
+            <img src="{% static 'images/patient.png'%}" width="150" height="150" alt="">
+            <a href="{% url 'viewpatient' %}" class="btn btn-primary" style="background-color: orangered;">VIEW PATIENT'S</a>
+        </div>
+        <div class="carditem d-flex flex-column p-4 justify-content-center align-items-center m-4 shadow  "
+            style="width:350px">
+            <img src="{% static 'images/register.png'%}" width="150" height="150" alt="">
+            <a href="{% url 'createpatient' %}" class="btn btn-primary" style="background-color: orangered;">REGISTER NEW PATIENT</a>
+        </div>
+    </div>
+</section>
+{%endblock%}

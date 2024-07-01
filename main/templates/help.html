@@ -1,0 +1,136 @@
+{% extends 'navigation.html' %}
+{% block body %}
+{% load static %}
+<style>
+    .help-sec {
+        margin-top: 90px;
+        background-color: orangered;
+        border-radius: 100px;
+    }
+
+    .carditem {
+        background-color: white;
+        border-radius: 12px;
+    }
+
+    .con-a {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .con-a a {
+        font-size: 36px;
+        color: orangered;
+        margin-right: 20px;
+    }
+    .img{
+        max-width: 100%;
+        height: auto;
+        align-items: center;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+<section class="help-sec">
+    <div class="d-flex flex-row justify-content-center p-3 w-100 m-2 flex-wrap ">
+        <div class="carditem d-flex flex-column p-4 justify-content-center align-items-center m-4 shadow  "
+            style="width:350px">
+            <img src="{% static 'images/contact.jpg'%}" width="150" height="150" alt="">
+            <h3 class="my-2">Contact Us</h3>
+            <p class="my-2" style="text-align: center;">
+                Have questions or need assistance? Reach out to us! Our dedicated support team is here to help. Contact
+                us via phone, email, or through our online chat.
+            </p>
+            <div class="con-a mt-3">
+                <a href="mailto:ramprasadchippada5@gmail.com"><i class="fa fa-envelope"></i></a>
+                <a href="tel:+917569343039"><i class="fa fa-phone"></i></a>
+                <a href="https://wa.me/917569343039"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+        <div class="carditem d-flex flex-column p-4 justify-content-center align-items-center m-4 shadow "
+            style="width:350px">
+            <img src="{% static 'images/faq.png'%}" width="200" height="150" alt="">
+            <h3 class="my-2">Recent FAQ's</h3>
+            <p class="my-2" style="text-align: center;">
+                Explore our latest FAQs to find answers to common inquiries. From troubleshooting to product details,
+                stay informed with our most recent responses to frequently asked questions
+            </p>
+            <a href="#faq" class="btn btn-primary mt-3" style="background-color: orangered;">Recent
+                FAQ's</a>
+        </div>
+        <div class="carditem d-flex flex-column p-4 justify-content-center align-items-center m-4 shadow"
+            style="width:350px">
+            <img src="{% static 'images/how.jpg'%}" width="150" height="150" alt="">
+            <h3 class="my-2">How to Use?</h3>
+            <p class="my-2" style="text-align: center;">
+                Discover the simplicity of our product with our easy-to-follow guide. From setup to advanced features,
+                learn how to make the most out of our solution and unlock its full potential in no time.
+            </p>
+            <a href="#guide" class="btn btn-primary mt-3" style="background-color: orangered;">Sample
+                Guide</a>
+        </div>
+    </div>
+</section>
+<section id="faq" class="container mt-4">
+    <h1 style="text-align: center;"><span style="color: orangered;" >Recent</span> FAQ's</h1>
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                    aria-expanded="true" aria-controls="collapseOne">
+                    What are the Symptoms of Alzheimer Patients ?
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    Alzheimer's symptoms often include memory loss that disrupts daily life, challenges in planning or
+                    solving problems, difficulty completing familiar tasks, confusion with time or place, trouble
+                    understanding visual images and spatial relationships, new problems with words in speaking or
+                    writing, misplacing things and losing the ability to retrace steps, decreased or poor judgment,
+                    withdrawal from work or social activities, and changes in mood or personality.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    What are the reasons for Alzheimer Disease ?
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    Alzheimer's disease, a progressive neurological disorder, is primarily caused by the accumulation of
+                    abnormal proteins in the brain. These proteins disrupt communication between brain cells, leading to
+                    memory loss and cognitive decline. While the exact cause remains unknown, factors such as age,
+                    genetics, and lifestyle may contribute to its development.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Is there any treatment for Alzheimer disease ?
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    Currently, there is no cure for Alzheimer's disease. Treatment focuses on managing symptoms to
+                    improve quality of life. Medications and therapies can help alleviate cognitive decline and
+                    behavioral changes. Lifestyle interventions like exercise and social engagement may also support
+                    overall well-being.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="guide" class="container mt-4">
+    <h1 style="text-align: center;"><span style="color: orangered;" >Sample</span> Guide</h1>
+    <img src="{% static 'images/guide.png'%}" alt="" class="img">
+</section>
+{%endblock%}

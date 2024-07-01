@@ -1,0 +1,41 @@
+{% extends 'patientnav.html'%}
+{% block body%}
+{% load static %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+<link rel="stylesheet" href="{% static 'mystyle.css' %}">
+<script>
+$(document).ready(function(){
+    $('#example').DataTable();
+});
+</script>
+
+<div class="container" style="overflow-x:scroll;margin-top:150px;">
+    <h2 class="text-center">MY MEDICINE</h2>
+            <hr> 
+            <table class="table table-bordered" id="example">
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Name</th>
+                        <th>Dosage</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in med %}
+                    <tr>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{i.name}}</td>
+                        <td>{{i.dosage}}</td>
+                        <td>{{i.time}}</td>
+                    </tr>
+                    {%endfor%}
+                </tbody>
+            </table>
+</div>
+
+{%endblock%}

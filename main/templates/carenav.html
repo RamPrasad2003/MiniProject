@@ -1,0 +1,48 @@
+
+<html >
+
+<head>
+    {% load static %}
+    <link rel="icon" type="image/x-icon" href="{% static 'images/upload.jpg' %}">
+    <title>CareBond SITE</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{% static 'mystyle.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="{% static 'script.js' %}"></script>
+</head>
+
+<body>
+    <header>
+		<a href="{% url 'carehome' %}" class="logo"><i class="	fas fa-book-reader" style="color:orangered;"></i> CareBond</a>
+		<div id="menu" class="fas fa-bars"></div>
+		<nav class="navbar">
+			<ul>
+				<li><a  href="{% url 'carehome' %}">Home</a></li>
+                <li><a  href="{% url 'viewpatient' %}">viewpatient</a></li>
+				<li><a href="{% url 'createpatient' %}">CreatePatient</a></li>
+                <li class="navbar-item dropdown" style="color: black;" >
+                    <a href="#" class=" btn btn-primary" data-toggle="dropdown" style="text-transform:uppercase;color:white" ><i class="fas fa-user-circle"></i> {{request.user.first_name}}</a>
+                    <div class="dropdown-menu" >
+                        <a href="{% url 'gaurdianprofile' %}" class=" dropdown-item"style="color: black;">Profile</a>
+                        <a href="{% url 'editprofile' %}" class=" dropdown-item"style="color: black;">Edit Profile</a>
+                        <a href="{% url 'changepass' %}" class=" dropdown-item"style="color: black;">Change Password</a>
+                        <a href="{% url 'Logout' %}" class=" dropdown-item"style="color: red;">Logout</a>
+                    </div>
+                </li>
+			</ul>
+		</nav>
+	</header>
+</body>
+
+</html>
+{% block body %}
+{% endblock %}
